@@ -5,19 +5,14 @@ spl_autoload_register(function ($class_name) {
     });
 
     $t1 = new Titulaire("Pierre", "Wietrich", "15-05-1980", "Nancy");
-    $t1 -> afficherInfos();
 
-    $t2 = new Titulaire("Elon", "Musk", "15-05-1975", "New york");
-    $t2 -> afficherInfos();
-
-    $c3 = new Compte("livret A", 1400, "roubles", $t1);
+    $c1 = new Compte("livret A", 1400, "euros", $t1);
+    $c2 = new Compte("Assurance Vie", 10000, "euros", $t1);
+    $c3 = new Compte("compte courant", 600, "euros", $t1);
     
-    $c3 -> displayInfos();
+    $t1->afficherInfos();
 
-    $c4 = new Compte("compte courant", 600, "$", $t2);
-    $c4 -> displayInfos();
     
-    $c3->Payment(50, $c4);
     
 
 

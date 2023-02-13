@@ -11,6 +11,7 @@ class Titulaire
     private string $_nom;
     private string $_datenaissance;
     private string $_ville;
+    private array $_comptes;
 
 
     // Déclaration des méthodes
@@ -23,9 +24,15 @@ class Titulaire
         $this->_nom = $nom;
         $this->_datenaissance = $datenaissance;
         $this->_ville = $ville;
+        $this->_comptes = [];
     }
 
     // METHODES//
+
+    public function addCompte(Compte $compte)
+    {
+        $this->_comptes[] = $compte;
+    }
 
     public function calcAge()
     {
@@ -43,6 +50,12 @@ class Titulaire
 
 
         echo "<br> Information du titulaire : " . $this->_prenom . " " . $this->_nom . ", " . $age . " ans, ville de " . $this->_ville . ".";
+
+        foreach ($this->_comptes as $value){
+           echo $value->displayInfos();
+
+        }
+        //foreach comptes
     }
 
     public function __toString()
@@ -51,6 +64,8 @@ class Titulaire
     }
 
 
+
+    // GETTER AND SETTERS
     /**
      * Get the value of _prenom
      */
@@ -127,6 +142,26 @@ class Titulaire
     public function setVille($ville)
     {
         $this->_ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of _comptes
+     */ 
+    public function get_comptes()
+    {
+        return $this->_comptes;
+    }
+
+    /**
+     * Set the value of _comptes
+     *
+     * @return  self
+     */ 
+    public function set_comptes($_comptes)
+    {
+        $this->_comptes = $_comptes;
 
         return $this;
     }

@@ -23,7 +23,7 @@ private Titulaire $_titulaire;
         $this->_solde = $solde;
         $this->_devise = $devise;
         $this->_titulaire = $titulaire;
-       
+        $this->_titulaire->addCompte($this);
         
     }
 
@@ -50,23 +50,99 @@ private Titulaire $_titulaire;
         echo "<br> Votre compte a été débité de ".$debit." ".$this->_devise;
         return $this->_solde;
 
-
     }
 
     public function Payment(int $somme, Compte $_compte2){
         $this->Debit($somme);
         $_compte2->Credit($somme);
-        echo "<br>\ Virement effectué/<br>";
+        echo "<br> Le virement a été effectué. <br>";
 
     }
 
 
+
+/**
+ * Get the value of _libelle
+ */ 
+public function get_libelle()
+{
+return $this->_libelle;
 }
 
+/**
+ * Set the value of _libelle
+ *
+ * @return  self
+ */ 
+public function set_libelle($_libelle)
+{
+$this->_libelle = $_libelle;
 
+return $this;
+}
 
+/**
+ * Get the value of _solde
+ */ 
+public function get_solde()
+{
+return $this->_solde;
+}
 
+/**
+ * Set the value of _solde
+ *
+ * @return  self
+ */ 
+public function set_solde($_solde)
+{
+$this->_solde = $_solde;
 
+return $this;
+}
+
+/**
+ * * Get the value of devise
+*/
+public function getDevise()
+{
+return $this->_devise;
+}
+
+/**
+* Set the value of devise
+*
+* @return  self
+*/
+public function setDevise($devise)
+{
+$this->_devise = $devise;
+
+return $this;
+}
+    
+
+/**
+ * Get the value of _titulaire
+ */ 
+public function get_titulaire()
+{
+return $this->_titulaire;
+}
+
+/**
+ * Set the value of _titulaire
+ *
+ * @return  self
+ */ 
+public function set_titulaire($_titulaire)
+{
+$this->_titulaire = $_titulaire;
+
+return $this;
+}
+
+}
 
 ?>
 
