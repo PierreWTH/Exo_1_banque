@@ -29,10 +29,14 @@ class Titulaire
 
     // METHODES//
 
+        // Ajouter un compte
+
     public function addCompte(Compte $compte)
     {
         $this->_comptes[] = $compte;
     }
+
+        // Calculer âge
 
     public function calcAge()
     {
@@ -42,6 +46,7 @@ class Titulaire
         return $age;
     }
 
+        // Afficher infos du titulaire
 
 
     public function afficherInfos()
@@ -55,8 +60,9 @@ class Titulaire
            echo $value->displayInfos();
 
         }
-        //foreach comptes
     }
+
+        // To string
 
     public function __toString()
     {
@@ -66,19 +72,13 @@ class Titulaire
 
 
     // GETTER AND SETTERS
-    /**
-     * Get the value of _prenom
-     */
+    
     public function getPrenom()
     {
         return $this->_prenom;
     }
 
-    /**
-     * Set the value of _prenom
-     *
-     * @return  self
-     */
+    
     public function set_prenom($_prenom)
     {
         $this->_prenom = $_prenom;
@@ -86,19 +86,13 @@ class Titulaire
         return $this;
     }
 
-    /**
-     * Get the value of _nom
-     */
+    
     public function getNom()
     {
         return $this->_nom;
     }
 
-    /**
-     * Set the value of _nom
-     *
-     * @return  self
-     */
+    
     public function set_nom($_nom)
     {
         $this->_nom = $_nom;
@@ -106,19 +100,12 @@ class Titulaire
         return $this;
     }
 
-    /**
-     * Get the value of _datenaissance
-     */
+    
     public function get_datenaissance()
     {
         return $this->_datenaissance;
     }
 
-    /**
-     * Set the value of _datenaissance
-     *
-     * @return  self
-     */
     public function set_datenaissance($_datenaissance)
     {
         $this->_datenaissance = $_datenaissance;
@@ -126,19 +113,11 @@ class Titulaire
         return $this;
     }
 
-    /**
-     * Get the value of ville
-     */
     public function getVille()
     {
         return $this->_ville;
     }
 
-    /**
-     * Set the value of ville
-     *
-     * @return  self
-     */
     public function setVille($ville)
     {
         $this->_ville = $ville;
@@ -146,19 +125,11 @@ class Titulaire
         return $this;
     }
 
-    /**
-     * Get the value of _comptes
-     */ 
     public function get_comptes()
     {
         return $this->_comptes;
     }
 
-    /**
-     * Set the value of _comptes
-     *
-     * @return  self
-     */ 
     public function set_comptes($_comptes)
     {
         $this->_comptes = $_comptes;
